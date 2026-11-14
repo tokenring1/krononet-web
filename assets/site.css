@@ -241,3 +241,17 @@ footer .alt{border-top:1px solid #2a2346;margin-top:36px;padding-top:20px;font-s
   .takvim td[data-b] b{display:inline}
   footer .sutun{grid-template-columns:1fr}
 }
+
+/* ── Yasal metinler ── */
+.yasal{max-width:780px;margin:0 auto;padding:20px 0 40px;font-size:16px;line-height:1.75}
+.yasal h1{font-size:34px;font-weight:800;letter-spacing:-.6px;margin:10px 0 6px}
+.yasal .upd{color:var(--dim2);font-size:14px;margin-bottom:26px}
+.yasal h2{font-size:20px;font-weight:700;margin:34px 0 10px;padding-top:22px;border-top:1px solid var(--line)}
+.yasal p{margin:10px 0;color:#3b3452}
+.yasal ul,.yasal ol{margin:10px 0 10px 22px;color:#3b3452}
+.yasal li{margin:6px 0}
+.yasal table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.yasal th,.yasal td{border-top:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.yasal th{background:var(--bg2);font-size:13px;color:var(--dim)}
+.yasal .box{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+@media (max-width:600px){.yasal h1{font-size:27px}.yasal table{display:block;overflow-x:auto}}

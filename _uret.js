@@ -1,6 +1,6 @@
 // Site üretici: `node _uret.js` → tüm sayfalar + sitemap.xml + robots.txt
 // Alt çizgiyle başladığı için GitHub Pages (Jekyll) bu dosyayı yayımlamaz.
-// privacy.html ve hesap-silme.html elle yazılır, buraya dokunulmaz.
+// privacy.html ve hesap-silme.html: metin _yasal/ içinde (yasal metin, elle düzenlenir), tasarım buradan.
 const fs = require('fs');
 const path = require('path');
 
@@ -396,14 +396,24 @@ ${kutular(PROGRAMLAR.map((p) => [`/calisma-programi/${p.slug}/`, p.ad, p.not, '�
       sssLd(sss)] });
 }
 
+// ───────────── Yasal sayfalar (metin _yasal/ içinde, aynen kullanılır) ─────────────
+for (const [dosya, baslik, aciklama] of [
+  ['privacy.html', 'Gizlilik Politikası | Krononet', 'Krononet uygulamasının gizlilik politikası: toplanan veriler, kullanım amaçları, paylaşım, saklama ve haklarınız.'],
+  ['hesap-silme.html', 'Hesap ve Veri Silme | Krononet', 'Krononet hesabınızı ve verilerinizi nasıl silersiniz: uygulama içinden veya e-posta talebiyle.'],
+]) {
+  const metin = fs.readFileSync(path.join(__dirname, '_yasal', dosya), 'utf8');
+  SAYFALAR.push({ yol: '/' + dosya, dosya, baslik, aciklama, kampanya: 'yasal',
+    govde: `<div class="yol"><a href="/">Ana sayfa</a> › ${baslik.split(' | ')[0]}</div><article class="yasal">${metin}</article>` });
+}
+
 // ───────────── Yaz ─────────────
 for (const s of SAYFALAR) {
-  const hedef = path.join(__dirname, s.yol, 'index.html');
+  const hedef = s.dosya ? path.join(__dirname, s.dosya) : path.join(__dirname, s.yol, 'index.html');
   fs.mkdirSync(path.dirname(hedef), { recursive: true });
   fs.writeFileSync(hedef, sablon(s));
   console.log('yazıldı', s.yol);
 }
-const urller = [...SAYFALAR.map((s) => s.yol), '/privacy.html', '/hesap-silme.html'];
+const urller = SAYFALAR.map((s) => s.yol);
 fs.writeFileSync(path.join(__dirname, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urller.map((u) => `  <url><loc>${SITE}${u}</loc><lastmod>${bugun}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(__dirname, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
