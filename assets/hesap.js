@@ -147,6 +147,28 @@
     setInterval(tik, 1000);
   }
 
+  // Sınav takvimi: kalan gün + geçenleri soluklaştır + kategori filtresi
+  function takvimKur() {
+    var simdi = new Date(); simdi.setHours(0, 0, 0, 0);
+    document.querySelectorAll('[data-kalan]').forEach(function (td) {
+      var p = td.getAttribute('data-kalan').split('-');
+      var gun = Math.round((new Date(+p[0], +p[1] - 1, +p[2]) - simdi) / 86400000);
+      td.textContent = gun > 0 ? gun + ' gün' : gun === 0 ? 'Bugün' : 'Yapıldı';
+      if (gun < 0) td.parentNode.classList.add('gecti');
+    });
+    var f = document.querySelector('[data-filtre]');
+    if (!f) return;
+    f.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      var k = b.getAttribute('data-k');
+      f.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('tr[data-kat]').forEach(function (tr) {
+        tr.style.display = !k || tr.getAttribute('data-kat') === k ? '' : 'none';
+      });
+    });
+  }
+
   document.querySelectorAll('[data-sinavlar]').forEach(kur);
   document.querySelectorAll('[data-sayac]').forEach(sayacKur);
+  takvimKur();
 })();

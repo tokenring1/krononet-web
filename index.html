@@ -4,272 +4,106 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Krononet – Deneme Programı, Alarm ve Net Takibi | YKS, LGS, KPSS, TUS</title>
-<meta name="description" content="Deneme saatini kur, alarm çalsın, netini gir. YKS, LGS, KPSS ve TUS için deneme programı, net takibi, veli ve koç takibi. Öğrencilere ücretsiz.">
+<meta name="description" content="Deneme saatini kur, alarm çalsın, netini gir. YKS, LGS, KPSS ve TUS için deneme programı, net takibi, sınav takvimi ve hazır çalışma programları. Öğrencilere ücretsiz.">
 <link rel="canonical" href="https://krononet.com/">
-<meta name="theme-color" content="#150a24">
+<meta name="theme-color" content="#7c3aed">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/ikon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Krononet">
-<meta property="og:title" content="Krononet – Denemeyi yarına bırakma">
-<meta property="og:description" content="Deneme saatini kur, alarm çalsın, netini gir. YKS, LGS, KPSS ve TUS için ücretsiz.">
+<meta property="og:title" content="Krononet – Deneme Programı, Alarm ve Net Takibi | YKS, LGS, KPSS, TUS">
+<meta property="og:description" content="Deneme saatini kur, alarm çalsın, netini gir. YKS, LGS, KPSS ve TUS için deneme programı, net takibi, sınav takvimi ve hazır çalışma programları. Öğrencilere ücretsiz.">
 <meta property="og:url" content="https://krononet.com/">
 <meta property="og:image" content="https://krononet.com/img/paylas.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/site.css">
-<style>
-  .nav .menu{display:flex;gap:18px;margin-right:6px}
-  .nav .menu a{color:var(--dim);text-decoration:none;font-size:14px;font-weight:600}
-  .nav .menu a:hover{color:var(--text)}
-  .genis{max-width:1080px;margin:0 auto;padding:0 16px}
-
-  .giris{
-    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
-    padding:64px 0 56px;
-  }
-  .giris h1{font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-1px}
-  .giris h1 em{
-    font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .giris p.alt{color:var(--dim);font-size:18px;margin:18px 0 26px;max-width:480px}
-  .rozetler{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-  .rozetler span{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
-
-  /* Telefon maketi */
-  .sahne{position:relative;display:flex;justify-content:center}
-  .sahne::before{
-    content:"";position:absolute;inset:10% 5%;border-radius:50%;
-    background:radial-gradient(closest-side,rgba(167,139,250,.35),transparent);filter:blur(20px);
-  }
-  .telefon{
-    position:relative;width:270px;aspect-ratio:9/19;border-radius:40px;padding:12px;
-    background:#0d0617;border:1px solid #3a2560;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
-  }
-  .ekran{
-    height:100%;border-radius:30px;overflow:hidden;position:relative;
-    background:linear-gradient(170deg,#7c3aed 0%,#c026d3 55%,#ec4899 100%);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;
-  }
-  .ekran .ust{position:absolute;top:14px;left:0;right:0;font-size:11px;opacity:.8}
-  .ekran img{width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
-  .ekran .saat{font-size:58px;font-weight:800;letter-spacing:-2px;line-height:1;margin-top:6px}
-  .ekran .ders{font-size:16px;font-weight:700;margin-top:8px}
-  .ekran .kaynak{font-size:12px;opacity:.85}
-  .ekran .btn{
-    margin-top:26px;width:100%;background:#fff;color:#7c3aed;font-weight:800;border-radius:16px;padding:14px;font-size:15px;
-  }
-  .ekran .btn2{margin-top:10px;width:100%;border:1px solid rgba(255,255,255,.5);border-radius:16px;padding:11px;font-size:13px;font-weight:600}
-  .telefon.arka{position:absolute;transform:translateX(-58%) rotate(-7deg) scale(.86);opacity:.95}
-  .telefon.on{transform:translateX(26%)}
-  .telefon img.gercek{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px}
-
-  .blok{padding:64px 0;border-top:1px solid var(--line)}
-  .blok h2{font-size:32px;line-height:1.15;font-weight:800;letter-spacing:-.5px;text-align:center}
-  .blok .ac{color:var(--dim);text-align:center;margin:10px auto 34px;max-width:560px}
-
-  .adimlar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:a}
-  .adimlar div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative}
-  .adimlar div::before{
-    counter-increment:a;content:counter(a);
-    display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:10px;margin-bottom:12px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800;color:#fff;
-  }
-  .adimlar b{display:block;font-size:16px}
-  .adimlar span{color:var(--dim);font-size:14px}
-
-  .kimler{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .kimler div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;text-align:center}
-  .kimler img{width:110px;height:110px;object-fit:contain}
-  .kimler h3{font-size:19px;margin:8px 0 4px}
-  .kimler .fiyat{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;margin-bottom:10px;background:rgba(52,211,153,.15);color:var(--ok)}
-  .kimler .fiyat.pre{background:rgba(167,139,250,.18);color:var(--accent)}
-  .kimler ul{list-style:none;color:var(--dim);font-size:14px;text-align:left;display:grid;gap:6px}
-  .kimler li::before{content:"✓ ";color:var(--accent);font-weight:800}
-
-  .ozellik{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .ozellik div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-  .ozellik i{font-style:normal;font-size:26px}
-  .ozellik b{display:block;margin:8px 0 4px}
-  .ozellik span{color:var(--dim);font-size:14px}
-
-  .krono{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
-  .krono div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 8px}
-  .krono img{width:96px;height:96px;object-fit:contain}
-  .krono b{display:block;font-size:14px}
-  .krono span{color:var(--dim);font-size:12px}
-
-  .son{
-    text-align:center;border-radius:28px;padding:48px 20px;margin:0 0 64px;
-    background:linear-gradient(135deg,#3b1a6e,#6b1650);border:1px solid var(--line);
-  }
-  .son h2{font-size:30px;font-weight:800}
-  .son p{color:#e5d9ff;margin:8px 0 22px}
-  .son .indir{background:#fff;color:#7c3aed;box-shadow:none}
-
-  .sss-dar{max-width:720px;margin:0 auto}
-
-  @media (max-width:880px){
-    .nav .menu{display:none}
-    .giris{grid-template-columns:1fr;text-align:center;padding:40px 0}
-    .giris h1{font-size:34px}
-    .giris p.alt{margin-left:auto;margin-right:auto}
-    .rozetler{justify-content:center}
-    .sahne{overflow:hidden;padding:10px 0 20px}
-    .adimlar,.ozellik{grid-template-columns:1fr 1fr}
-    .kimler{grid-template-columns:1fr}
-    .krono{grid-template-columns:1fr 1fr}
-    .blok{padding:48px 0}
-    .blok h2{font-size:26px}
-  }
-  @media (max-width:480px){
-    .adimlar,.ozellik{grid-template-columns:1fr}
-    .telefon{width:240px}
-    .telefon.arka{transform:translateX(-52%) rotate(-7deg) scale(.82)}
-    .telefon.on{transform:translateX(22%)}
-  }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=2026-11-14">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Krononet","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":"tr","url":"https://krononet.com/","downloadUrl":"https://play.google.com/store/apps/details?id=com.krononet.app","image":"https://krononet.com/img/ikon.png","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Krononet","url":"https://krononet.com/","logo":"https://krononet.com/img/ikon.png","email":"destek.krononet@gmail.com"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Krononet ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Öğrenciler ve veliler için tamamen ücretsiz. Eğitim koçları için ücretsiz plan ve daha fazla öğrenci için Premium plan var."}},
-{"@type":"Question","name":"Hangi sınavlar için kullanılır?","acceptedAnswer":{"@type":"Answer","text":"YKS (TYT ve AYT), LGS, KPSS Genel Yetenek–Genel Kültür ve TUS. Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı ayarlıdır."}},
-{"@type":"Question","name":"iPhone'da var mı?","acceptedAnswer":{"@type":"Answer","text":"Şimdilik yalnızca Android'de, Google Play'de."}},
-{"@type":"Question","name":"Veli çocuğunun netlerini nasıl görür?","acceptedAnswer":{"@type":"Answer","text":"Öğrenci uygulamadaki 6 haneli davet koduyla velisini bağlar; veli kendi telefonundan ilerlemeyi takip eder."}},
-{"@type":"Question","name":"Koç öğrencisine nasıl program gönderir?","acceptedAnswer":{"@type":"Answer","text":"Koç bir grup kurar ve grup kodunu öğrencisiyle paylaşır. Öğrenci Koça Bağlan ile katılır; koçun hazırladığı program şablonu öğrencinin uygulamasına alarmlarıyla birlikte gelir."}}
-]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Krononet","url":"https://krononet.com/","inLanguage":"tr"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Krononet ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Öğrenciler ve veliler için tamamen ücretsiz. Eğitim koçları için ücretsiz plan ve daha fazla öğrenci için Premium plan var."}},{"@type":"Question","name":"Hangi sınavlar için kullanılır?","acceptedAnswer":{"@type":"Answer","text":"YKS (TYT ve AYT), LGS, KPSS Genel Yetenek–Genel Kültür ve TUS. Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı ayarlıdır."}},{"@type":"Question","name":"iPhone'da var mı?","acceptedAnswer":{"@type":"Answer","text":"Şimdilik yalnızca Android'de, Google Play'de."}},{"@type":"Question","name":"Veli çocuğunun netlerini nasıl görür?","acceptedAnswer":{"@type":"Answer","text":"Öğrenci uygulamadaki 6 haneli davet koduyla velisini bağlar; veli kendi telefonundan ilerlemeyi takip eder."}},{"@type":"Question","name":"Koç öğrencisine nasıl program gönderir?","acceptedAnswer":{"@type":"Answer","text":"Koç bir grup kurar ve grup kodunu öğrencisiyle paylaşır. Öğrenci \"Koça Bağlan\" ile katılır; koçun hazırladığı program şablonu öğrencinin uygulamasına alarmlarıyla birlikte gelir."}}]}</script>
 </head>
 <body>
-<nav class="nav"><div class="genis" style="display:flex;align-items:center;gap:12px;height:56px">
+<header class="nav"><div class="wrap">
   <a class="marka" href="/"><i>K</i>Krononet</a>
-  <span class="bos"></span>
-  <div class="menu">
-    <a href="#nasil">Nasıl çalışır</a>
-    <a href="#kimler">Veli &amp; Koç</a>
-    <a href="#araclar">Araçlar</a>
+  <nav class="menu" aria-label="Ana menü"><a href="/yks-net-hesaplama/">Net Hesaplama</a><a href="/sinav-takvimi-2027/">Sınav Takvimi</a><a href="/calisma-programi/">Çalışma Programları</a><a href="/yks-kac-gun-kaldi/">Geri Sayım</a><a href="/#kimler">Veli & Koç</a></nav>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=com.krononet.app&referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-menu">Uygulamayı İndir</a>
+  <details class="hamburger"><summary aria-label="Menü">☰</summary><nav><a href="/yks-net-hesaplama/">Net Hesaplama</a><a href="/sinav-takvimi-2027/">Sınav Takvimi</a><a href="/calisma-programi/">Çalışma Programları</a><a href="/yks-kac-gun-kaldi/">Geri Sayım</a><a href="/#kimler">Veli & Koç</a><a href="https://play.google.com/store/apps/details?id=com.krononet.app&referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-menu"><b style="color:var(--accent)">▶ Uygulamayı İndir</b></a></nav></details>
+</div></header>
+
+<section class="giris"><div class="wrap">
+  <div>
+    <h1>Denemeyi <em>yarına</em> bırakma.</h1>
+    <p class="alt">Deneme saatini kur, saati gelince alarm çalsın, bitince netini gir. Gelişimini Krononet takip etsin.</p>
+    <div class="eylem"><a class="btn buyuk" href="https://play.google.com/store/apps/details?id=com.krononet.app&referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-sayfa">▶ Google Play'den ücretsiz indir</a><a class="btn buyuk cizgi" href="/calisma-programi/">Hazır programlar</a></div>
+    <div class="cipler"><span>🎯 YKS</span><span>📖 LGS</span><span>🏛️ KPSS</span><span>🩺 TUS</span><span>Öğrenciye ücretsiz</span></div>
   </div>
-  <a class="mini" href="https://play.google.com/store/apps/details?id=com.krononet.app&amp;referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-menu">İndir</a>
-</div></nav>
-
-<main class="genis">
-  <div class="giris">
-    <div>
-      <h1>Denemeyi <em>yarına</em> bırakma.</h1>
-      <p class="alt">Deneme saatini kur, saati gelince alarm çalsın, bitince netini gir. Gelişimini Krononet takip etsin.</p>
-      <a class="indir buyuk" href="https://play.google.com/store/apps/details?id=com.krononet.app&amp;referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-sayfa">▶ Google Play'den ücretsiz indir</a>
-      <div class="rozetler">
-        <span>🎯 YKS</span><span>📖 LGS</span><span>🏛️ KPSS</span><span>🩺 TUS</span><span>Öğrenciye ücretsiz</span>
-      </div>
-    </div>
-    <div class="sahne">
-      <div class="telefon arka" aria-hidden="true"><div class="ekran">
-        <div class="ust">Krononet · Deneme zamanı</div>
-        <img src="/img/odakli.webp" alt="" width="120" height="120">
-        <div class="saat">19:45</div>
-        <div class="ders">LGS · Din Kültürü</div>
-        <div class="kaynak">Branş Denemesi · 10 soru</div>
-        <div class="btn">BAŞLIYORUM</div>
-        <div class="btn2">10 dk ertele</div>
-      </div></div>
-      <div class="telefon on"><img class="gercek" src="/img/ekran-bugun.webp" alt="Krononet Bugün ekranı: Bu Hafta kartı, tamamlanan ve bekleyen denemeler" width="540" height="1145"></div>
-    </div>
+  <div class="sahne">
+    <div class="telefon arka" aria-hidden="true"><div class="alarm"><div class="ust">Krononet · Deneme zamanı</div><img src="/img/odakli.webp" alt="" width="118" height="118"><div class="saat">19:45</div><div class="ders">LGS · Din Kültürü</div><div class="kaynak">Branş Denemesi · 10 soru</div><div class="b1">BAŞLIYORUM</div><div class="b2">10 dk ertele</div></div></div>
+    <div class="telefon on"><img class="gercek" src="/img/ekran-bugun.webp" alt="Krononet Bugün ekranı: Bu Hafta kartı, tamamlanan ve bekleyen denemeler" width="540" height="1145"></div>
   </div>
+</div></section>
 
-  <section class="blok" id="nasil">
-    <h2>Dört adımda düzenli deneme</h2>
-    <p class="ac">Çalışmayı hatırlamak sana kalmasın.</p>
-    <div class="adimlar">
-      <div><b>Programını kur</b><span>Dersini, kitabını ve saatini seç ya da hazır programla tek dokunuşta başla.</span></div>
-      <div><b>Alarm çalsın</b><span>Saati gelince tam ekran alarm. Sessiz bir bildirim değil.</span></div>
-      <div><b>Netini gir</b><span>Kronometreyle süreni tut, doğru-yanlışını gir, netin anında hesaplansın.</span></div>
-      <div><b>Gelişimini gör</b><span>Ders ders net yüzden, haftalık hedefin ve ilerleme grafiklerin.</span></div>
-    </div>
-  </section>
+<section class="blok"><div class="wrap">
+  <div class="ortala"><h2>Ücretsiz araçlar</h2><p class="ust-yazi">Uygulamayı indirmeden de kullanabilirsin.</p></div>
+  <div class="izgara i3"><a class="kutu" href="/yks-net-hesaplama/"><div class="ikon">🧮</div><b>YKS Net Hesaplama</b><span>TYT · AYT · YDT</span></a><a class="kutu" href="/lgs-net-hesaplama/"><div class="ikon">🧮</div><b>LGS Net Hesaplama</b><span>3 yanlış 1 doğru</span></a><a class="kutu" href="/kpss-net-hesaplama/"><div class="ikon">🧮</div><b>KPSS Net Hesaplama</b><span>Genel Yetenek · Genel Kültür</span></a><a class="kutu" href="/sinav-takvimi-2027/"><div class="ikon">🗓️</div><b>2027 Sınav Takvimi</b><span>YKS, LGS, KPSS, ALES, TUS</span></a><a class="kutu" href="/calisma-programi/"><div class="ikon">📅</div><b>Hazır Çalışma Programları</b><span>LGS, TYT, AYT, KPSS</span></a><a class="kutu" href="/yks-kac-gun-kaldi/"><div class="ikon">⏳</div><b>YKS'ye Kaç Gün Kaldı?</b><span>19 Haziran 2027</span></a></div>
+</div></section>
 
-  <section class="blok" id="kimler">
-    <h2>Öğrenci çalışır, veli ve koç takip eder</h2>
-    <p class="ac">Aynı uygulama, üç farklı rol.</p>
-    <div class="kimler">
-      <div>
-        <img src="/img/normal.webp" alt="Krono öğrenci" width="110" height="110" loading="lazy">
-        <h3>Öğrenci</h3>
-        <span class="fiyat">Ücretsiz</span>
-        <ul><li>Deneme programı ve alarm</li><li>Net takibi ve analiz</li><li>Hazır haftalık programlar</li><li>180+ yayınevi, barkodla kitap ekleme</li></ul>
-      </div>
-      <div>
-        <img src="/img/veli.webp" alt="Krono veli" width="110" height="110" loading="lazy">
-        <h3>Veli</h3>
-        <span class="fiyat">Ücretsiz</span>
-        <ul><li>Çocuğunun ilerlemesini gör</li><li>Net bildirimleri</li><li>6 haneli kodla bağlan</li><li>3 öğrenciye kadar</li></ul>
-      </div>
-      <div>
-        <img src="/img/koc.webp" alt="Krono koç" width="110" height="110" loading="lazy">
-        <h3>Eğitim Koçu</h3>
-        <span class="fiyat pre">Ücretsiz başla · Premium</span>
-        <ul><li>Grup kur, kodla öğrenci ekle</li><li>Program şablonu gönder</li><li>Hazır paketler (TYT, AYT, LGS, KPSS)</li><li>Öğrenci ilerleme paneli</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="blok">
-    <h2>Sınavına göre ayarlı</h2>
-    <p class="ac">Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı.</p>
-    <div class="ozellik">
-      <div><i>⏰</i><b>Gerçek alarm</b><span>Telefon kilitliyken bile tam ekran, sesli alarm. Ertele ya da başla.</span></div>
-      <div><i>⏱️</i><b>Kronometre</b><span>Denemeyi gerçek sınav süresinde çöz, süren kayda geçsin.</span></div>
-      <div><i>📊</i><b>Net analizi</b><span>Ders bazında net yüzdesi; sınavlar arası karşılaştırılabilir.</span></div>
-      <div><i>📚</i><b>Hazır programlar</b><span>Sınavına göre haftalık paket, tek dokunuşla kurulur.</span></div>
-      <div><i>🏷️</i><b>Yayınevi &amp; barkod</b><span>Kitabını barkodundan tara, test sayısı hazır gelsin.</span></div>
-      <div><i>📄</i><b>PDF rapor</b><span>Gelişimini rapor olarak velinle ya da koçunla paylaş.</span></div>
-    </div>
-  </section>
-
-  <section class="blok">
-    <h2>Tanış: Krono 🥔</h2>
-    <p class="ac">Krononet'in maskotu. Sen çalıştıkça o da değişir.</p>
-    <div class="krono">
-      <div><img src="/img/normal.webp" alt="Krono" width="96" height="96" loading="lazy"><b>Merhaba!</b><span>Daha ilk testini bekliyor</span></div>
-      <div><img src="/img/filiz.webp" alt="Krono filizlendi" width="96" height="96" loading="lazy"><b>Filizlendi</b><span>Güzel çalışıyorsun</span></div>
-      <div><img src="/img/kizarmis.webp" alt="Krono kızardı" width="96" height="96" loading="lazy"><b>Kızardı</b><span>Bugün çok çalıştın</span></div>
-      <div><img src="/img/ozlemis.webp" alt="Krono özledi" width="96" height="96" loading="lazy"><b>Özledi</b><span>Birkaç gündür yoksun</span></div>
-    </div>
-  </section>
-
-  <section class="blok" id="araclar">
-    <h2>Ücretsiz araçlar</h2>
-    <p class="ac">Uygulamayı indirmeden de kullanabilirsin.</p>
-    <div class="araclar" style="max-width:820px;margin:0 auto;grid-template-columns:repeat(3,1fr)">
-      <a href="/yks-net-hesaplama/">YKS Net Hesaplama<span>TYT · AYT · YDT</span></a>
-      <a href="/lgs-net-hesaplama/">LGS Net Hesaplama<span>3 yanlış 1 doğru</span></a>
-      <a href="/kpss-net-hesaplama/">KPSS Net Hesaplama<span>GY · GK</span></a>
-      <a href="/yks-kac-gun-kaldi/">YKS'ye Kaç Gün Kaldı?<span>19 Haziran 2027</span></a>
-      <a href="/lgs-kac-gun-kaldi/">LGS'ye Kaç Gün Kaldı?<span>13 Haziran 2027</span></a>
-      <a href="/kpss-kac-gun-kaldi/">KPSS'ye Kaç Gün Kaldı?<span>12 Eylül 2027</span></a>
-    </div>
-  </section>
-
-  <section class="blok">
-    <h2>Sık sorulanlar</h2>
-    <div class="sss-dar" style="margin-top:24px">
-      <details><summary>Krononet ücretsiz mi?</summary><p>Öğrenciler ve veliler için tamamen ücretsiz. Eğitim koçları için ücretsiz plan ve daha fazla öğrenci için Premium plan var.</p></details>
-      <details><summary>Hangi sınavlar için kullanılır?</summary><p>YKS (TYT ve AYT), LGS, KPSS Genel Yetenek–Genel Kültür ve TUS. Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı ayarlıdır.</p></details>
-      <details><summary>iPhone'da var mı?</summary><p>Şimdilik yalnızca Android'de, Google Play'de.</p></details>
-      <details><summary>Veli çocuğunun netlerini nasıl görür?</summary><p>Öğrenci uygulamadaki 6 haneli davet koduyla velisini bağlar; veli kendi telefonundan ilerlemeyi takip eder.</p></details>
-      <details><summary>Koç öğrencisine nasıl program gönderir?</summary><p>Koç bir grup kurar ve grup kodunu öğrencisiyle paylaşır. Öğrenci "Koça Bağlan" ile katılır; koçun hazırladığı program şablonu öğrencinin uygulamasına alarmlarıyla birlikte gelir.</p></details>
-    </div>
-  </section>
-
-  <div class="son">
-    <h2>Bugünün denemesi seni bekliyor</h2>
-    <p>Kurulumu bir dakika sürer.</p>
-    <a class="indir buyuk" href="https://play.google.com/store/apps/details?id=com.krononet.app&amp;referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-alt">▶ Google Play'den indir</a>
+<section class="blok renkli" id="nasil"><div class="wrap">
+  <div class="ortala"><h2>Dört adımda düzenli deneme</h2><p class="ust-yazi">Çalışmayı hatırlamak sana kalmasın.</p></div>
+  <div class="izgara i4 adimlar">
+    <div class="kutu"><b>Programını kur</b><span>Dersini, kitabını ve saatini seç ya da hazır programla tek dokunuşta başla.</span></div>
+    <div class="kutu"><b>Alarm çalsın</b><span>Saati gelince tam ekran alarm. Sessiz bir bildirim değil.</span></div>
+    <div class="kutu"><b>Netini gir</b><span>Kronometreyle süreni tut, doğru-yanlışını gir, netin anında hesaplansın.</span></div>
+    <div class="kutu"><b>Gelişimini gör</b><span>Ders ders net yüzden, haftalık hedefin ve ilerleme grafiklerin.</span></div>
   </div>
-</main>
+</div></section>
 
-<footer>
-  <a href="/privacy.html">Gizlilik Politikası</a> · <a href="/hesap-silme.html">Hesap &amp; Veri Silme</a> · <a href="mailto:destek.krononet@gmail.com">destek.krononet@gmail.com</a><br>
-  © 2026 Krononet · Türkiye
-</footer>
+<section class="blok" id="kimler"><div class="wrap">
+  <div class="ortala"><h2>Öğrenci çalışır, veli ve koç takip eder</h2><p class="ust-yazi">Aynı uygulama, üç farklı rol.</p></div>
+  <div class="izgara i3">
+    <div class="kutu rol"><img src="/img/normal.webp" alt="" width="120" height="120" loading="lazy"><h3>Öğrenci</h3><span class="etiket">Ücretsiz</span><ul><li>Deneme programı ve alarm</li><li>Net takibi ve analiz</li><li>Hazır haftalık programlar</li><li>180+ yayınevi, barkodla kitap ekleme</li></ul></div>
+    <div class="kutu rol"><img src="/img/veli.webp" alt="" width="120" height="120" loading="lazy"><h3>Veli</h3><span class="etiket">Ücretsiz</span><ul><li>Çocuğunun ilerlemesini gör</li><li>Net bildirimleri</li><li>6 haneli kodla bağlan</li><li>3 öğrenciye kadar</li></ul></div>
+    <div class="kutu rol"><img src="/img/koc.webp" alt="" width="120" height="120" loading="lazy"><h3>Eğitim Koçu</h3><span class="etiket mor">Ücretsiz başla · Premium</span><ul><li>Grup kur, kodla öğrenci ekle</li><li>Program şablonu gönder</li><li>Hazır paketler (TYT, AYT, LGS, KPSS)</li><li>Öğrenci ilerleme paneli</li></ul></div>
+  </div>
+</div></section>
+
+<section class="blok renkli"><div class="wrap">
+  <div class="ortala"><h2>Sınavına göre ayarlı</h2><p class="ust-yazi">Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı.</p></div>
+  <div class="izgara i3">
+    <div class="kutu"><div class="ikon">⏰</div><b>Gerçek alarm</b><span>Telefon kilitliyken bile tam ekran, sesli alarm. Ertele ya da başla.</span></div>
+    <div class="kutu"><div class="ikon">⏱️</div><b>Kronometre</b><span>Denemeyi gerçek sınav süresinde çöz, süren kayda geçsin.</span></div>
+    <div class="kutu"><div class="ikon">📊</div><b>Net analizi</b><span>Ders bazında net yüzdesi; sınavlar arası karşılaştırılabilir.</span></div>
+    <div class="kutu"><div class="ikon">📚</div><b>Hazır programlar</b><span>Sınavına göre haftalık paket, tek dokunuşla kurulur.</span></div>
+    <div class="kutu"><div class="ikon">🏷️</div><b>Yayınevi ve barkod</b><span>Kitabını barkodundan tara, test sayısı hazır gelsin.</span></div>
+    <div class="kutu"><div class="ikon">📄</div><b>PDF rapor</b><span>Gelişimini rapor olarak velinle ya da koçunla paylaş.</span></div>
+  </div>
+</div></section>
+
+<section class="blok"><div class="wrap">
+  <div class="ortala"><h2>Tanış: Krono 🥔</h2><p class="ust-yazi">Krononet'in maskotu. Sen çalıştıkça o da değişir.</p></div>
+  <div class="izgara i4">
+    <div class="kutu krono"><img src="/img/normal.webp" alt="Krono" width="100" height="100" loading="lazy"><b>Merhaba!</b><span>İlk testini bekliyor</span></div>
+    <div class="kutu krono"><img src="/img/filiz.webp" alt="Krono filizlendi" width="100" height="100" loading="lazy"><b>Filizlendi</b><span>Güzel çalışıyorsun</span></div>
+    <div class="kutu krono"><img src="/img/kizarmis.webp" alt="Krono kızardı" width="100" height="100" loading="lazy"><b>Kızardı</b><span>Bugün çok çalıştın</span></div>
+    <div class="kutu krono"><img src="/img/ozlemis.webp" alt="Krono özledi" width="100" height="100" loading="lazy"><b>Özledi</b><span>Birkaç gündür yoksun</span></div>
+  </div>
+</div></section>
+
+<section class="blok renkli"><div class="wrap"><section class="dar" style="padding:20px 0 10px"><h2 style="font-size:24px;margin-bottom:14px">Sık sorulanlar</h2><details class="sss"><summary>Krononet ücretsiz mi?</summary><p>Öğrenciler ve veliler için tamamen ücretsiz. Eğitim koçları için ücretsiz plan ve daha fazla öğrenci için Premium plan var.</p></details><details class="sss"><summary>Hangi sınavlar için kullanılır?</summary><p>YKS (TYT ve AYT), LGS, KPSS Genel Yetenek–Genel Kültür ve TUS. Her sınavın süresi, soru sayısı ve yanlış katsayısı ayrı ayarlıdır.</p></details><details class="sss"><summary>iPhone'da var mı?</summary><p>Şimdilik yalnızca Android'de, Google Play'de.</p></details><details class="sss"><summary>Veli çocuğunun netlerini nasıl görür?</summary><p>Öğrenci uygulamadaki 6 haneli davet koduyla velisini bağlar; veli kendi telefonundan ilerlemeyi takip eder.</p></details><details class="sss"><summary>Koç öğrencisine nasıl program gönderir?</summary><p>Koç bir grup kurar ve grup kodunu öğrencisiyle paylaşır. Öğrenci "Koça Bağlan" ile katılır; koçun hazırladığı program şablonu öğrencinin uygulamasına alarmlarıyla birlikte gelir.</p></details></section></div></section>
+
+<div class="wrap"><div class="son"><h2>Bugünün denemesi seni bekliyor</h2><p>Kurulumu bir dakika sürer.</p><a class="btn buyuk beyaz" href="https://play.google.com/store/apps/details?id=com.krononet.app&referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-alt">▶ Google Play'den indir</a></div></div>
+<footer><div class="wrap">
+  <div class="sutun">
+    <div><a class="marka" href="/"><i>K</i>Krononet</a><p>YKS, LGS, KPSS ve TUS öğrencileri için deneme programı, alarm ve net takibi. Öğrencilere ücretsiz.</p></div>
+    <div><h4>Araçlar</h4><a href="/yks-net-hesaplama/">YKS Net Hesaplama</a><a href="/lgs-net-hesaplama/">LGS Net Hesaplama</a><a href="/kpss-net-hesaplama/">KPSS Net Hesaplama</a><a href="/yks-kac-gun-kaldi/">YKS'ye Kaç Gün Kaldı?</a><a href="/lgs-kac-gun-kaldi/">LGS'ye Kaç Gün Kaldı?</a><a href="/kpss-kac-gun-kaldi/">KPSS'ye Kaç Gün Kaldı?</a></div>
+    <div><h4>Programlar</h4><a href="/sinav-takvimi-2027/">2027 Sınav Takvimi</a><a href="/calisma-programi/lgs/">LGS Çalışma Programı</a><a href="/calisma-programi/tyt/">TYT Çalışma Programı</a><a href="/calisma-programi/ayt-sayisal/">AYT Sayısal Çalışma Programı</a><a href="/calisma-programi/ayt-esit-agirlik/">AYT Eşit Ağırlık Çalışma Programı</a><a href="/calisma-programi/kpss/">KPSS GY-GK Çalışma Programı</a></div>
+    <div><h4>Krononet</h4><a href="https://play.google.com/store/apps/details?id=com.krononet.app&referrer=utm_source%3Dkrononet.com%26utm_medium%3Dweb%26utm_campaign%3Dana-alt">Google Play'den İndir</a><a href="/#kimler">Veliler ve Koçlar</a><a href="/privacy.html">Gizlilik Politikası</a><a href="/hesap-silme.html">Hesap ve Veri Silme</a><a href="mailto:destek.krononet@gmail.com">İletişim</a></div>
+  </div>
+  <div class="alt"><span>© 2026 Krononet · Türkiye</span><span>destek.krononet@gmail.com</span></div>
+</div></footer>
+<script src="/assets/hesap.js?v=2026-11-14" defer></script>
 </body>
 </html>
