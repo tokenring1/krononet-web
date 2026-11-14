@@ -290,7 +290,7 @@ for (const p of PROGRAMLAR) {
     [`${p.kisa} çalışma programı nasıl kullanılır?`, 'Her gün belirtilen saatte o dersin testini çöz, süreni tut ve netini not et. Krononet uygulamasında bu program hazır paket olarak var; tek dokunuşla kurulur, her ders için alarm kendiliğinden ayarlanır.'],
     ['Pazar neden boş?', 'Pazar dinlenme ve telafi günü. Hafta içinde kaçırdığın testleri tamamlayabilir ya da genel deneme çözebilirsin.'],
     ['Saatleri değiştirebilir miyim?', 'Evet. Okul ya da kurs saatine göre kaydırabilirsin; önemli olan her gün aynı saatte oturmak. Uygulamada her dersin saatini ayrı ayrı değiştirebilirsin.'],
-    ['Hangi yayınevinin kitabını kullanmalıyım?', 'Program yayınevinden bağımsız. Elindeki branş denemesi ya da soru bankasıyla uygula; uygulamada kitabını 180+ yayınevi arasından seçebilir ya da barkodunu okutabilirsin.']];
+    ['Hangi yayınevinin kitabını kullanmalıyım?', 'Program yayınevinden bağımsız. Elindeki branş denemesi ya da soru bankasıyla uygula; uygulamada kitabını 180+ yayınevi arasından seçebilirsin.']];
   SAYFALAR.push({ yol, kampanya: `program-${p.slug}`,
     baslik: `${p.ad} 2027 (Hazır, Ücretsiz) | Krononet`,
     aciklama: `${p.kisa} için hazır haftalık çalışma programı: hangi gün, hangi saat, hangi ders, kaç soru. Haftada ${testSayisi} test. Uygulamaya tek dokunuşla kur, alarmlar hazır.`,
@@ -355,7 +355,7 @@ ${kutular(PROGRAMLAR.map((p) => [`/calisma-programi/${p.slug}/`, p.ad, p.not, '�
 <section class="blok" id="kimler"><div class="wrap">
   <div class="ortala"><h2>Öğrenci çalışır, veli ve koç takip eder</h2><p class="ust-yazi">Aynı uygulama, üç farklı rol.</p></div>
   <div class="izgara i3">
-    <div class="kutu rol"><img src="/img/normal.webp" alt="" width="120" height="120" loading="lazy"><h3>Öğrenci</h3><span class="etiket">Ücretsiz</span><ul><li>Deneme programı ve alarm</li><li>Net takibi ve analiz</li><li>Hazır haftalık programlar</li><li>180+ yayınevi, barkodla kitap ekleme</li></ul></div>
+    <div class="kutu rol"><img src="/img/normal.webp" alt="" width="120" height="120" loading="lazy"><h3>Öğrenci</h3><span class="etiket">Ücretsiz</span><ul><li>Deneme programı ve alarm</li><li>Net takibi ve analiz</li><li>Hazır haftalık programlar</li><li>180+ yayınevi listesi</li></ul></div>
     <div class="kutu rol"><img src="/img/veli.webp" alt="" width="120" height="120" loading="lazy"><h3>Veli</h3><span class="etiket">Ücretsiz</span><ul><li>Çocuğunun ilerlemesini gör</li><li>Net bildirimleri</li><li>6 haneli kodla bağlan</li><li>3 öğrenciye kadar</li></ul></div>
     <div class="kutu rol"><img src="/img/koc.webp" alt="" width="120" height="120" loading="lazy"><h3>Eğitim Koçu</h3><span class="etiket mor">Ücretsiz başla · Premium</span><ul><li>Grup kur, kodla öğrenci ekle</li><li>Program şablonu gönder</li><li>Hazır paketler (TYT, AYT, LGS, KPSS)</li><li>Öğrenci ilerleme paneli</li></ul></div>
   </div>
@@ -368,7 +368,7 @@ ${kutular(PROGRAMLAR.map((p) => [`/calisma-programi/${p.slug}/`, p.ad, p.not, '�
     <div class="kutu"><div class="ikon">⏱️</div><b>Kronometre</b><span>Denemeyi gerçek sınav süresinde çöz, süren kayda geçsin.</span></div>
     <div class="kutu"><div class="ikon">📊</div><b>Net analizi</b><span>Ders bazında net yüzdesi; sınavlar arası karşılaştırılabilir.</span></div>
     <div class="kutu"><div class="ikon">📚</div><b>Hazır programlar</b><span>Sınavına göre haftalık paket, tek dokunuşla kurulur.</span></div>
-    <div class="kutu"><div class="ikon">🏷️</div><b>Yayınevi ve barkod</b><span>Kitabını barkodundan tara, test sayısı hazır gelsin.</span></div>
+    <div class="kutu"><div class="ikon">🏷️</div><b>180+ yayınevi</b><span>Kitabını listeden seç, dersine ve test sayısına göre programın kurulsun.</span></div>
     <div class="kutu"><div class="ikon">📄</div><b>PDF rapor</b><span>Gelişimini rapor olarak velinle ya da koçunla paylaş.</span></div>
   </div>
 </div></section>
