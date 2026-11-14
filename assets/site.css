@@ -80,8 +80,8 @@ a.kutu .ok{color:var(--accent);font-weight:700;font-size:14px;margin-top:10px;di
 .sahne{position:relative;display:flex;justify-content:center;min-height:540px}
 .telefon{position:relative;width:270px;aspect-ratio:9/19;border-radius:42px;padding:11px;background:#16102a;box-shadow:0 40px 80px -30px rgba(76,29,149,.55),0 0 0 1px rgba(0,0,0,.05)}
 .telefon.arka{position:absolute;width:236px;top:38px;transform:translateX(-60%) rotate(-6deg);-webkit-font-smoothing:subpixel-antialiased}
-.telefon.on{transform:translateX(26%)}
-.telefon img.gercek{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:32px}
+.telefon.on{transform:translateX(26%);aspect-ratio:auto}
+.telefon img.gercek{display:block;width:100%;height:auto;border-radius:32px}
 .alarm{height:100%;border-radius:32px;overflow:hidden;position:relative;background:linear-gradient(170deg,#7c3aed 0%,#c026d3 55%,#ec4899 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px}
 .alarm .ust{position:absolute;top:16px;left:0;right:0;font-size:11px;opacity:.85}
 .alarm img{width:118px;height:118px;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}

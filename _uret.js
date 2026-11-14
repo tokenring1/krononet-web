@@ -333,7 +333,7 @@ ${kutular(PROGRAMLAR.map((p) => [`/calisma-programi/${p.slug}/`, p.ad, p.not, '�
   </div>
   <div class="sahne">
     <div class="telefon arka" aria-hidden="true"><div class="alarm"><div class="ust">Krononet · Deneme zamanı</div><img src="/img/odakli.webp" alt="" width="118" height="118"><div class="saat">19:45</div><div class="ders">LGS · Din Kültürü</div><div class="kaynak">Branş Denemesi · 10 soru</div><div class="b1">BAŞLIYORUM</div><div class="b2">10 dk ertele</div></div></div>
-    <div class="telefon on"><img class="gercek" src="/img/ekran-bugun.webp" alt="Krononet Bugün ekranı: Bu Hafta kartı, tamamlanan ve bekleyen denemeler" width="540" height="1145"></div>
+    <div class="telefon on"><img class="gercek" src="/img/ekran-bugun.webp?v=2" alt="Krononet Bugün ekranı: Bu Hafta kartı, tamamlanan ve bekleyen denemeler" width="540" height="1093"></div>
   </div>
 </div></section>
 
