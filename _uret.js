@@ -125,7 +125,7 @@ function sablon({ yol, baslik, aciklama, govde, ld = [], kampanya = 'site', tamG
 <meta property="og:title" content="${kacis(baslik)}">
 <meta property="og:description" content="${kacis(aciklama)}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE}/img/paylas.png">
+<meta property="og:image" content="${SITE}/img/paylas-krono.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
